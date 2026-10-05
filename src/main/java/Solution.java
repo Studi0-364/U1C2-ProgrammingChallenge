@@ -8,18 +8,15 @@ public class Solution {
      */
 
     public double average(double t1, double t2, double t3, double t4) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        return (.25 * (t1 + t2 + t3 + t4));
     }
 
-    public int roundAverage(double average) {
-        // remove 0 and return your answer
-        return 0;
+    public int roundAverage(double average){
+        return (int) (average + .5);
     }
 
     public boolean isPassing(int roundedAverage) {
-        // remove false and return your answer
-        return false;
+        return (roundedAverage >= 65);
     }
 
     /*
@@ -27,14 +24,12 @@ public class Solution {
     */
 
     public double totalStock(int shares, double price) {
-        // remove 0.0 and return your answer
-        return 0.0;
+        return (shares * price);
     }
 
 
     public int roundValueChange(double totalStock) {
-        // remove 0 and return your answer
-        return 0;
+        return (int) Math.round(totalStock);
     }
 
     /*
@@ -42,8 +37,12 @@ public class Solution {
     */
    
     public double adjustDigits(double userDouble) {
-        // remove 0.0 and return your answer
-        return 0.0;
+            int hund  = ((((int) userDouble / 100) + 1) % 10) * 100;
+            int ten  = ((((int) (userDouble % 100) / 10) + 1) % 10) * 10;
+            int one  = ((((int) (userDouble % 10)) + 1) % 10);
+            double tenth  = ((((int)(userDouble * 10)%10)+ 1.0) %10) /10;
+            double hundth  = ((((userDouble * 100) % 100) + 1) % 10) / 100;
+        return hund + ten + one  + tenth + hundth;
     }
 
     public static void main(String[] args) {
